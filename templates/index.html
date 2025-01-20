@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homepage</title>
+</head>
+<body>
+
+<p>Dan's Christmas List</p>
+    {% for data in content %}
+    <h2>{{data.title}}</h2>
+    <img src="{{ data.image.url }}" alt="">
+    
+<p>{{data.description}}</p>
+
+    
+<p>Last updated: {{data.last_updated|date:'M j, Y'}}</p>
+
+<p><a href="{{data.link}}" target="_blank">Click Here to go see an example</a></p>
+
+<p>Look for one that's around ${{data.suggested_amount}}</p>
+<button onclick="location.href = '/purchased/{{data.id}}'">mark this item as purchased</button>
+    {% endfor %}
+
+</body>
+</html>

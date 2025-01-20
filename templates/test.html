@@ -1,0 +1,19 @@
+{% for data in content %}
+
+<div class="data-item">
+
+    <img src="{{ data.image.url }}" alt="data images">
+
+    <h1>{{data.title}}</h1>
+
+    <p>{{data.description}}</p>
+
+    <a href="{{data.link}}" target="_blank" class="card-link">  <h2>Whatever</h2></a>
+
+    <p>{{data.suggested_amount}}</p>
+
+    <button onclick="location.href = '/purchased/{{data.id}}'">mark this item as purchased</button>
+
+</div>
+
+{% endfor %}
